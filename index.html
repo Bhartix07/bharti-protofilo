@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bharti Kumari </title>
+    <title>BHARTI KUMARI</title>
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
     <link rel="stylesheet" 
@@ -187,7 +187,7 @@
 </head>
 <body>
     <header>
-        <h1>Bharti Kumari </h1>
+        <h1>BHARTI KUMARI </h1>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
@@ -201,27 +201,42 @@
 
     <section id="about">
         <h2>About Me</h2>
-        <p>Hi,<h2> I'm Bharti Kumari,</h2> a passionate Web Developer with expertise in HTML, CSS, JavaScript, React, and more. I love creating interactive and user-friendly applications that solve real-world problems.</p>
+        <p>Hi,<h2> I'm Bharti Kumari,</h2> a passionate Web Developer with expertise in HTML, CSS, JavaScript, React, and more. I enjoy creating interactive and user-friendly applications that solve real-world problems.</p>
 
     </section>
     <section id="projects">
   <h2>Projects</h2>
   <div class="carousel-container">
     <div class="project-carousel" id="carousel">
-      <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>Showcasing my work with smooth animations and an interactive UI.</p>
-      </div>
-      <div class="project-card">
-        <h3>Kids Learning Fun</h3>
-        <p>Interactive games for kids to improve memory, logic, and number skills.</p>
-      </div>
-      <div class="project-card">
-        <h3>Weather App</h3>
-        <p>Fetches real-time weather data from the OpenWeather API.</p>
-      </div>
-    </div>
 
+      <!-- Portfolio Website -->
+      <div class="project-card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio showcasing my skills, academic knowledge, 
+        and projects with smooth animations and interactive UI.</p>
+      </div>
+
+      <!-- Kids Learning Fun -->
+      <div class="project-card">
+        <i class="fas fa-child"></i>
+        <h3>Kids Learning Fun</h3>
+        <p>An educational website 🎮 for kids with fun memory games, quizzes, 
+        number matching, and logic-building activities.</p>
+      </div>
+
+      <!-- Weather App -->
+      <div class="project-card">
+        <i class="fas fa-cloud-sun"></i>
+        <h3>Weather App</h3>
+        <p>Fetches real-time weather updates from the OpenWeather API 🌦, 
+        featuring temperature, humidity, and location-based search.</p>
+      </div>
+
+      
+      
+   
+</div>    <!-- Buttons -->
     <div class="carousel-buttons">
       <button onclick="prevProject()">⬅ Prev</button>
       <button onclick="nextProject()">Next ➡</button>
@@ -229,7 +244,13 @@
   </div>
 </section>
 
+<!-- Extra CSS for interactivity -->
 <style>
+  #projects h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+
   .carousel-container {
     position: relative;
     width: 80%;
@@ -239,41 +260,56 @@
 
   .project-carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.6s ease-in-out;
   }
 
   .project-card {
-    min-width: 100%; /* each project takes full width */
-    box-sizing: border-box;
-    padding: 20px;
-    background: #9d7cbb;
-    border-radius: 10px;
+    min-width: 100%;
+    padding: 40px;
+    background: linear-gradient(135deg, #9d7cbb, #6b5b95);
+    border-radius: 15px;
     text-align: center;
+    color: white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+
+  .project-card i {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: #ffd700;
+  }
+
+  .project-card:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
   }
 
   .carousel-buttons {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 20px;
     gap: 20px;
   }
 
   .carousel-buttons button {
-    padding: 8px 16px;
+    padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     background-color: #3e4046;
     color: white;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
   }
 
   .carousel-buttons button:hover {
     background-color: #41485b;
+    transform: scale(1.05);
   }
 </style>
 
+<!-- JS for carousel -->
 <script>
   let currentIndex = 0;
   const carousel = document.getElementById("carousel");
@@ -281,7 +317,7 @@
   const totalProjects = projects.length;
 
   function showProject(index) {
-    const offset = -index * 100; // shift by percentage
+    const offset = -index * 100;
     carousel.style.transform = `translateX(${offset}%)`;
   }
 
@@ -294,7 +330,190 @@
     currentIndex = (currentIndex + 1) % totalProjects;
     showProject(currentIndex);
   }
+
+  // Show first project initially
+  showProject(currentIndex);
 </script>
+
+<<section id="academic">
+  <h2>Academic Knowledge</h2>
+  <div class="flashcard-container">
+    <div class="flashcard" id="academic-card">
+      <i class="fas fa-code fa-3x"></i>
+      <h3>Data Structures & Algorithms</h3>
+      <p>Strong foundation in arrays, linked lists, trees, graphs, sorting, searching, and dynamic programming.</p>
+    </div>
+  </div>
+
+  <div class="flashcard-buttons">
+    <button id="acad-prev">⬅ Prev</button>
+    <button id="acad-next">Next ➡</button>
+  </div>
+</section>
+
+<style>
+  .flashcard-container {
+    display: flex;
+    justify-content: center;
+    perspective: 1200px;
+    margin-bottom: 20px;
+  }
+
+  .flashcard {
+    width: 320px;
+    min-height: 160px;
+    background: #f9f9f9;
+    color: #222;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(16,24,40,0.12);
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease, opacity 0.3s ease, background 0.3s, color 0.3s;
+  }
+
+  .flashcard.hide {
+    opacity: 0;
+    transform: rotateY(90deg);
+  }
+
+  .flashcard.show {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+
+  .flashcard i {
+    color: #007BFF;
+    margin-bottom: 10px;
+  }
+
+  .flashcard-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .flashcard-buttons button {
+    padding: 8px 14px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .flashcard-buttons button:hover {
+    background: #1e4ed8;
+  }
+
+  /* Dark mode for Academic flashcards */
+  body.dark-mode .flashcard {
+    background: #333;
+    color: #f0f0f0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+  }
+
+  body.dark-mode .flashcard i {
+    color: #90cdf4; /* light blue icon in dark mode */
+  }
+
+  body.dark-mode .flashcard-buttons button {
+    background: #555;
+  }
+
+  body.dark-mode .flashcard-buttons button:hover {
+    background: #777;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const flashcard = document.getElementById("academic-card");
+
+    const data = [
+      { title: "Data Structures & Algorithms", text: "Strong foundation in arrays, linked lists, trees, graphs, sorting, searching, and dynamic programming.", icon: "fas fa-code" },
+      { title: "Database Management Systems", text: "Proficient in SQL, relational models, normalization, and NoSQL concepts (MySQL, MongoDB).", icon: "fas fa-database" },
+      { title: "Operating Systems", text: "Knowledge of process scheduling, memory management, virtual memory, and file systems.", icon: "fas fa-desktop" },
+      { title: "Computer Networks", text: "Understanding of OSI/TCP-IP models, routing, error detection/correction, and basic network security.", icon: "fas fa-network-wired" },
+      { title: "Software Engineering", text: "Familiar with SDLC models, Agile methodology, version control (Git), and basic project management.", icon: "fas fa-cogs" }
+    ];
+
+    let index = 0;
+
+    function updateCard(i) {
+      flashcard.classList.remove("show");
+      flashcard.classList.add("hide");
+
+      setTimeout(() => {
+        flashcard.querySelector("h3").textContent = data[i].title;
+        flashcard.querySelector("p").textContent = data[i].text;
+        flashcard.querySelector("i").className = data[i].icon + " fa-3x";
+
+        flashcard.classList.remove("hide");
+        flashcard.classList.add("show");
+      }, 300);
+    }
+
+    document.getElementById("acad-prev").addEventListener("click", () => {
+      index = (index - 1 + data.length) % data.length;
+      updateCard(index);
+    });
+
+    document.getElementById("acad-next").addEventListener("click", () => {
+      index = (index + 1) % data.length;
+      updateCard(index);
+    });
+
+    flashcard.classList.add("show"); // show first card
+  });
+</script>
+
+<!-- ✅ CSS (add to your CSS file) -->
+<style>
+  #academic {
+    text-align: center;
+    padding: 40px;
+  }
+  .carousel-container {
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+  }
+  .card {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+  .card i {
+    color: #007BFF;
+    margin-bottom: 15px;
+  }
+  .carousel-buttons {
+    margin-top: 15px;
+  }
+  .carousel-buttons button {
+    background: #007BFF;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.3s;
+  }
+  .carousel-buttons button:hover {
+    background: #0056b3;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.95);}
+    to {opacity: 1; transform: scale(1);}
+  }
+</style>
 
 
     <section id="skills">
